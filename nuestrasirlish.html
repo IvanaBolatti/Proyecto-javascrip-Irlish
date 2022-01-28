@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conocé la variedad de rlish, Cerveza artesanal de Sierras Chicas, Córdoba, Argentina">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https: //fonts.googleapis.com/css2? family = Cookie & display = swap "rel =" stylesheet ">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  
+   
+   
+   
+    <title>Nuestras Irlish</title>
+   
+</head class="head">
+<body class="body">
+    <header class="header">
+      <nav id="nav" >
+        <ul class="ul">
+            <li> <a href="../index.html"class="a" >Inicio</a></li>
+            <li> <a href="quienessomos.html"class="a"  >Quiénes somos</a></li>
+            <li> <a href="nuestrasirlish.html" class="a" >Nuestras Irlish</a></li>
+            <li> <a href="quieressorprender.html" class="a" >¿Querés sorprender a alguien?</a></li>
+            <li> <a href="contacto.html" class="a" >Contacto</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main class="main">
+     
+        <a href="../index.html" class="logo" ></a>
+        <a data-bs-toggle="modal" id="botonCarrito" href="#modalCarrito" role="button">
+    
+          <img class="carrito"  src="imagenes/carrito.png" alt="carrito" ></img>
+        </a>   
+      <div id="carritoCantidad"> 
+          <span class="fw-bold text-black" style="margin-left: 1130px;position: absolute;" >0</span> <!--JS / Cart Counter-->
+      </div>
+      
+     <div id="introduccion">
+        <h1 id="h1">Nuestras cervezas Irlish</h1>
+        <p class="p">Amigos...y amigos de nuestros amigos...Los invitamos a distinguir sabores únicos, pero también los invitamos a participar para encontrar nuevos y distinguidos sabores que te representan.   </p> 
+        <p class="p">A continuación algunos de aquellos sabores únicos.</p>
+     </div>
+
+         <div class="d-flex flex-row bd-highlight mb-3  align-content-around flex-wrap">
+            <div class="p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#CervezaModal" >
+              <div class="card" >
+                 <img src="imagenes/beer1.png" class= "imgGaleria" class="card-img-top" alt="Cerveza con apariencia rica">
+                 <div class="card-body"  >
+                    <h5 class="card-title" >La más rica</h5>
+                    <p class="pNuestrasDescrip">Es la cerveza menos tostada y con menor cantidad de lúpulo, con la intención de dar lugar a una cerveza amarilla y muy ligera. Imposible no probarla.</p>
+                    <a class="btn btn-secondary botonCompra">La quiero</a>
+                 </div>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#CervezaModal" >
+              <div class="card">
+                <img src="imagenes/beer2.png" class= "imgGaleria" class="card-img-top" alt="Cerveza con apariencia rubia">
+                <div class="card-body">
+                  <h5 class="card-title">La rubia</h5>
+                  <p class="pNuestrasDescrip">Se caracterizan por su punto afrutado, su color claro -de ahí que se las llame "rubias", y su turbidez, debida a la malta suavee irresistible de trigo. </p>
+                  <a  class="btn btn-secondary botonCompra">La quiero</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#CervezaModal">
+              <div class="card">
+                <img  src="imagenes/beer3.png" class= "imgGaleria" class="card-img-top" alt="Cerveza con apariencia oscura">
+                <div class="card-body">
+                  <h5 class="card-title">La morocha</h5>
+                  <p class="pNuestrasDescrip">Las cervezas de cebada se elaboran con cebada malteada, que les confiere mayor amargor potencia y frescura. No te quedes sin tu moricha.</p>
+                  <a  class="btn btn-secondary botonCompra" >La quiero</a>
+               </div>
+              </div>
+            </div>
+          
+
+            <div class="p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#CervezaModal">
+              <div class="card">
+                <img src="imagenes/beer4.png" class= "imgGaleria" class="card-img-top" alt="Cerveza con apariencia suave y espumosa">
+                 <div class="card-body">
+                   <h5 class="card-title">La más suave</h5>
+                   <p class="pNuestrasDescrip">Las lager se consiguen con una fermentación a baja temperatura, que da unas cervezas más suaves, y que deben conservarse tras la fermentación durante al menos tres meses en contenedores. </p>
+                   <a class="btn btn-secondary botonCompra">La quiero</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#CervezaModal">
+              <div class="card">
+                <img src="imagenes/beer5.png" class= "imgGaleria" class="card-img-top" alt="Cerveza oscura">
+               <div class="card-body">
+                 <h5 class="card-title">La más Old</h5>
+                 <p class="pNuestrasDescrip">es un tipo de cerveza que reposa durante un tiempo y gana grado por evaporación. Tiene un grado medio entre el 5 y el 10% en volumen y un cierto sabor dulce debido al azúcar residual.</p>
+                 <a class="btn btn-secondary botonCompra">La quiero</a>
+               </div>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight"data-bs-toggle="modal" data-bs-target="#CervezaModal" >
+              <div class="card">
+                <img src="imagenes/beer6.png" class= "imgGaleria" class="card-img-top" alt="Cerveza negra">
+               <div class="card-body">
+                 <h5 class="card-title">La más amarga</h5>
+                 <p class="pNuestrasDescrip">Suelen ser cervezas con mucho carácter y generalmente con grado alcohólico. Aunque no sean necesariamente contundentes, son especialmente amargas y se sirven siempre tibias.</p>
+                 <a class="btn btn-secondary botonCompra">La quiero</a>
+               </div>
+              </div>
+            </div>
+         </div>
+          
+            <!-- Modal eleccion -->
+
+<div class="modal fade" id="CervezaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Comprando...</h5>
+       
+      </div>
+      <div class="modal-body">
+        
+      <div  id="espacioNombre" class="col order-first"> 
+    
+      </div>
+      Cantidad:
+      <input type="text" name="cantidadCompra" id= "cantidadCompra" class= "input">
+      
+      </div>
+      <div class="modal-footer">
+        <button id="borrar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button id="seleccionarCervezaModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seleccionar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- Modal Carrito-->
+        
+           <div class="modal fade" id="modalCarrito" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title p" id="exampleModalToggleLabel">Carrito de Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                
+                  <div class="modal-body">
+                    <div  id="completarProductos" class="row modal-header text-center">
+                        <div class="col-2">
+                            <h4 class="h4">Cerveza</h4>
+                        </div>
+                        <div class="col-2">
+                            <h4 class="h4">Precio</h4>
+                        </div>
+                        <div class="col-2">
+                            <h4 class="h4">Cantidad</h4>
+                        </div>
+                        <div class="col-2">
+                          <h4 class="h4">Total</h4>
+                       </div>
+                        <div class="col-2">
+                            <h4 class="h4">Eliminar</h4>
+                        </div>
+                    </div> 
+                  </div>
+              
+              
+                  <div class="modal-footer">
+                   
+                    
+                    <button type="button" class="btn btn-primary" data-bs-target="#veremos"  data-bs-toggle="modal"> Veremos </button>
+                    <button class="btn btn-secondary" data-bs-toggle="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secundary" data-bs-toggle="modal" data-target="#comprarFin"> <!-- JS / Finalizar compra -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Finalizar Compra
+                     </button>
+                  </div>
+                
+                </div>
+                </div>
+              </div>
+          
+             
+            
+              
+              <!-- Concluir con la compra -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Finalización de la compra...</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                     ¡ Muchas gracias por su compra!
+                    </div>
+                    <div class="modal-footer">
+                      <button id="terminar"type="button" class="btn btn-primary">Finalizar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    <!-- Fin Modal compra-->
+    
+ </div>
+
+             <button type="button" class="btn btn-secondary" id="cargar"> Cargar por primera vez </button>
+             <button type="button" class="btn btn-secondary" id="stock">Stock de Cervezas </button>
+    
+ <div id="divShowStock"> </div>
+          
+</main>
+
+    <footer class="footer">
+      <div class=espacioFooter>
+      <div class="espacioIzquierda" >
+        <p class=redes>Contactanos</p>
+        
+        <p class="pContacto" style="text-decoration-line: underline">Administración</p>
+        <p class="pContacto" > Av. San Martín 1432. Código Postal 5000.</p>
+        <p class="pContacto" >Provincia de Córdoba. Argentina.</p>
+        <p class="pContacto" style="text-decoration-line: underline">Teléfonos</p>
+        <p class="pContacto" >351-1534587 351-1534588  351-1534587</p>
+      </div>
+      
+      <div class="espacioDerecha">
+        <p class=redes>Redes sociales</p>
+
+        <img class="imgRedes" src="imagenes/face.png" alt="Logo de Facebook">
+        <img class="imgRedes" src="imagenes/inst.jpg" alt="Logo de Instagram">
+        <p class="pContacto" style="text-decoration-line: underline">E-mail</p> 
+        <a href="" style="text-decoration: none" >irlish@artesanal.com</a>
+  
+      </div>   
+    </div>
+    <nav id="navFooter">
+      <ul class="ulFooter">
+          <li> <a class="aFooter" href="../index.html"class="a">Inicio </a></li>
+          <li> <a class="aFooter" href="../pagina/quienessomos.html" class="a">Quiénes somos</a></li>
+          <li> <a class="aFooter" href="../pagina/nuestrasirlish.html"class="a" >Nuestras Irlish</a></li>
+          <li> <a class="aFooter" href="../pagina/quieressorprender.html" class="a">¿Querés sorprender a alguien?</a></li>
+          <li> <a class="aFooter" href="../pagina/contacto.html" class="a">Contacto</a></li>
+      </ul>
+  </nav>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+     <script src="varGenerales.js"></script>
+     <script src="funcionesGenerales.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+   
+</body>
+</html>
