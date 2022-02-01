@@ -41,7 +41,7 @@
           <img class="carrito"  src="imagenes/carrito.png" alt="carrito" ></img>
         </a>   
       <div id="carritoCantidad"> 
-          <span class="fw-bold text-black" style="margin-left: 1130px;position: absolute;" >0</span> <!--JS / Cart Counter-->
+           <!--cantidad de cargas-->
       </div>
       
      <div id="introduccion">
@@ -138,8 +138,8 @@
       
       </div>
       <div class="modal-footer">
-        <button id="borrar" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button id="seleccionarCervezaModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seleccionar</button>
+        <button id="borrar" type="button" class=" botonModal" data-bs-dismiss="modal">Cancelar</button>
+        <button id="seleccionarCervezaModal" type="button" class="botonModal" data-bs-dismiss="modal">Seleccionar</button>
       </div>
     </div>
   </div>
@@ -157,21 +157,22 @@
                 
                   <div class="modal-body">
                     <div  id="completarProductos" class="row modal-header text-center">
-                        <div class="col-2">
-                            <h4 class="h4">Cerveza</h4>
+                        <div class="col-md-2">
+                            <p class="pmodal">Cerveza</p>
                         </div>
-                        <div class="col-2">
-                            <h4 class="h4">Precio</h4>
+                        <div class="col-md-2 ">
+                            <p class="pmodal">Precio</p>
                         </div>
-                        <div class="col-2">
-                            <h4 class="h4">Cantidad</h4>
+                        <div class="col-md-2 ">
+                            <p class="pmodal">Cantidad</p>
                         </div>
-                        <div class="col-2">
-                          <h4 class="h4">Total</h4>
+                        <div class="col-md-2 ">
+                          <p class="pmodal">Total</p>
                        </div>
-                        <div class="col-2">
-                            <h4 class="h4">Eliminar</h4>
+                        <div class="col-md-2">
+                            <p class="pmodal">Eliminar</p>
                         </div>
+                    <div id="productos"></div>
                     </div> 
                   </div>
               
@@ -179,11 +180,10 @@
                   <div class="modal-footer">
                    
                     
-                    <button type="button" class="btn btn-primary" data-bs-target="#veremos"  data-bs-toggle="modal"> Veremos </button>
-                    <button class="btn btn-secondary" data-bs-toggle="modal">Cerrar</button>
-                    <button type="button" class="btn btn-secundary" data-bs-toggle="modal" data-target="#comprarFin"> <!-- JS / Finalizar compra -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Finalizar Compra
+                    <button type="button" class="botonModal" data-bs-target="#veremos"  data-bs-toggle="modal"> Veremos </button>
+                    <button class=" botonModal" data-bs-toggle="modal">Cerrar</button>
+                    <button type="button" class="botonModal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Finalizar Compra
                      </button>
                   </div>
                 
@@ -200,13 +200,13 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">Finalización de la compra...</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                      <button type="button" class=" botonModal btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
                      ¡ Muchas gracias por su compra!
                     </div>
                     <div class="modal-footer">
-                      <button id="terminar"type="button" class="btn btn-primary">Finalizar</button>
+                      <button id="terminar"type="button" class="botonModal">Finalizar</button>
                     </div>
                   </div>
                 </div>

@@ -11,6 +11,7 @@ var botones=[];
 var totalVenta=0;
 var paso=0;
 var carritoAux=[];
+var cant=0;
 
 var idCervezaUbicacion=0;
 var nombre="";
