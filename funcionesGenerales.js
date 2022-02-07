@@ -1,16 +1,18 @@
 
 /*El pronóstico del tiempo **/
+
 let urltiempo="https://api.openweathermap.org/data/2.5/weather?q=cordoba&appid=cf21726ebcc5b5a61f5457f04b230845";
 
     $.get(urltiempo, function(datos){
       
-        let contenido= `<div> 
-                        <h2>${datos.name} </h2>
-                        <p>Clima:${datos.weather[0].description} </p>
-                        <p>Temp máx:${datos.main.temp_max} </p>
-                        <p>Temp mín:${datos.main.temp_min} </p>
-                        </div>`;
-        $(".body").append(contenido);
+        let contenido= 
+        
+        `            <div class=" tiempo"> 
+                     
+                        <p class="pNuestrasDescrip">${datos.name} Clima:${datos.weather[0].description}   Temp máx:${datos.main.temp_max}   Temp mín:${datos.main.temp_min}  </p>
+        
+                    </div>`;
+        $(navFooter).append(contenido);
     })
 
 
@@ -79,7 +81,6 @@ espacioNombre.appendChild(div);
 let botonesCompra=document.body.querySelectorAll(".botonCompra");
 
 for (let boton of botonesCompra){
-  
     boton.addEventListener("click", eleccionCerveza);
   
      }
@@ -99,7 +100,7 @@ function cambioCarrito(cant) {
 /*Para que no se repita la cerveza en el carrito  **/
 function NoRepetirCerveza(nom){
   let salir="no";
-  carrito.forEach(venta =>{
+  carritoAux.forEach(venta =>{
   
   if (venta.nombre==nom){
     
@@ -200,9 +201,9 @@ function ventaGuardada(cantidad){
     const ventas=new venta(id, nombre, listaCervezas[idCervezaUbicacion-1].precio, cantidad);
     carrito.push(ventas);
     carritoAux.push(ventas);
-    console.log("ventaguardada",carrito, carritoAux);
     id=id+1;
     total=listaCervezas[idCervezaUbicacion-1].precio * cantidad;
+    listaCervezas[idCervezaUbicacion-1].stock -= cantidad;
     return total;
 }
 
@@ -214,40 +215,88 @@ $("#terminar").click(function(e){
   cant=0;
   cambioCarrito(cant);
   totalVenta=0;
+  actualizarStock(listaCervezas);
   
   })
 
-function eliminarDelCarrito(cont){                       //no me funciona. Los botones están activados.
-console.log("paso", cont);
-//Elimina del array.  
-//carrito.splice(ubicacion, 1);
 
-//e.target.parentNode.removeChild(e.target);
-/*let borrar =muestraVenta.querySelectorAll("h6");
-console.log(borrar);
-for ( let i=0; i<= borrar.length-1; i++){
-  
-  paraBorrar=borrar[i]
-  console.log(paraBorrar);
-  paraBorrar.parentNode.removeChild(paraBorrar);
-  cant=cant-1;
-  cambioCarrito(cant);
 
+
+/*....................Actualiza estado del carrito ..................... **/
+
+function  actualizarCarrito(){
+  productos.innerHTML = '';
+  totalVenta=0;
+  for (let i=0;i<carritoAux.length; i++) {
+    let venta=carritoAux[i];
+    totalPorCerveza= venta.precio* venta.cantidad;
+    totalVenta=totalVenta+totalPorCerveza;
+    let showDatos=document.createElement("div");
+    
+    showDatos.innerHTML=`
+    
+    <div id="muestraVenta" class="row modal-header text-center">
+              <div class="col-md-2">
+                  <p class=muestraV>${venta.nombre}</p>
+              </div>
+              <div class="col-md-2">
+                  <p class=muestraV>${venta.precio}</p>
+              </div>
+              <div class="col-md-2">
+                  <p class=muestraV>${venta.cantidad}</p>
+               </div>
+               <div class="col-md-2">
+                <p class=muestraV>${totalPorCerveza}</p>
+               </div> 
+            
+              <div class="col-md-2">
+               <button type="button" class="botonQuitar quitar"> Eliminar </button>
+
+           
+            </div>
+            </div>    
+              `
+
+    productos.appendChild(showDatos);
+
+     
 }
-**/
 
-}
+let showTotal=document.createElement("div");
+showTotal.innerHTML=`
+         <div id="precioTotal" class=" d-flex justify-content-end">
+         <h3 class="totalPrecio" >Total: <span >${totalVenta}</span> </h3>
+         </div>  `
+productos.appendChild(showTotal);
 
-/*Actualiza para que no se repitan en el carrito  **/
-function limpiarCarrito(){
-  carritoAux.splice(0, carritoAux.length);
-  let borrar =completarProductos.querySelectorAll("h3");
+// Eliminar por selección del botón
+$(document).ready(function()
+{
+  $(".botonQuitar").click(function(e){ 
   
-  if (borrar.length>1){
-      borrar[0].parentNode.removeChild(borrar[0]);
+    const borrarConBoton = e.target;
+    let fila= borrarConBoton.closest( '#muestraVenta' ).querySelectorAll("p");
+    let nombre=fila[0].innerText;
+    
+      borrarConBoton.closest( '#muestraVenta' ).remove();
+     //Elimina del array. 
+     for (let i=0;i<carritoAux.length; i++){
+  
+       if (carritoAux[i].nombre==nombre){
+        carritoAux.splice(i,1);
+       }
+     }
+     actualizarCarrito();
+    cant=cant-1;
+    cambioCarrito(cant);
+    console.log(carritoAux);
+
+})
+
+ })
   }
   
-}
+
 
 
   /*............................Comienzo proceso de carga  carrito ....................................  **/
@@ -274,69 +323,12 @@ let borrar = document.getElementById("nombreVariable");
         cambioCarrito(cant);
    }
   }
- 
-       carritoAux.forEach(venta =>{
-       totalPorCerveza= venta.precio* venta.cantidad;
-       totalVenta=totalVenta+totalPorCerveza;
-       let showDatos=document.createElement("div");
-       
-       showDatos.innerHTML=`
-       
-       <div id="muestraVenta" class="row modal-header text-center">
-                 <div class="col-md-2">
-                     <p class=muestraV>${venta.nombre}</p>
-                 </div>
-                 <div class="col-md-2">
-                     <p class=muestraV>${venta.precio}</p>
-                 </div>
-                 <div class="col-md-2">
-                     <p class=muestraV>${venta.cantidad}</p>
-                  </div>
-                  <div class="col-md-2">
-                   <p class=muestraV>${totalPorCerveza}</p>
-                  </div> 
-               
-                 <div class="col-md-2">
-                  <button type="button" class=" quitar"> Eliminar </button>
-
-              
-               </div>
-               </div>    
-                 `
-
-       productos.appendChild(showDatos);
+  actualizarCarrito();
   
-        
-})
-
-
-let showTotal=document.createElement("div");
-showTotal.innerHTML=`
-          <div id="precioTotal" class=" d-flex justify-content-end">
-          <h3 class="totalPrecio" >Total: <span >${totalVenta}</span> </h3>
-          </div>  `
-productos.appendChild(showTotal);
-
-
-
-// Eliminar por selección del botón
-
-
-const quitar =completarProductos.querySelectorAll(".quitar");
-    
-for(let i=0; i<=quitar.length-1;i++){ 
-    
-    quitar[i].addEventListener("click",eliminarDelCarrito(i));
-
-}
-
-//Limpiar el carro
-limpiarCarrito();
-
-totalPorCerveza=0;
-
+  totalPorCerveza=0;
   }
     )
+
 /*..............................Fin proceso de cargar carrito ...................................  **/
 
 
@@ -368,6 +360,8 @@ totalPorCerveza=0;
         cerveza=listadoCer[i];
         mostrarStock=document.createElement("mostrarStock");
         mostrarStock.innerHTML=`
+
+        
      <div class="row modal-header text-center" >
        <div class="col-md-2">
         <p class="pNuestrasDescrip">${cerveza.nombre}</p>
@@ -389,8 +383,6 @@ totalPorCerveza=0;
 
     mensaje.innerHTML=`<button type="button" class="btn-close" aria-label="Cerrar" onclick="cerrar()"></button> `;
     divShowStock.appendChild(mensaje);
-
-   actualizarStock(listadoCer);
    
  }
                
